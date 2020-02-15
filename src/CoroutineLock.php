@@ -8,7 +8,7 @@ use Swoft\Concern\ArrayPropertyTrait;
 use Swoft\Connection\Pool\Contract\ConnectionInterface;
 use Illuminate\Database\Connection;
 use Swoft\Bean\Concern\PrototypeTrait;
-
+use swoole\Coroutine;
 /**
  * Class CoroutineLock
  *
@@ -57,7 +57,7 @@ class CoroutineLock
                     return true;
 
                  
-                Co::usleep(1000 * 100);
+                 usleep(1000 * 100);
                 $wait_time = $wait_time - 1000 * 100;
            }
 
@@ -148,13 +148,13 @@ class CoroutineLock
 
     public function getUpdateLock($coroutine_id,$wait_time)
     {
-         return $this-> lock($coroutine_id,static::UPDATE);
+         return $this-> lock($coroutine_id,static::UPDATE,$wait_time);
     }
 
 
     public function getShareLock($coroutine_id,$wait_time)
     {
-         return $this-> lock($coroutine_id,static::SHARE);
+         return $this-> lock($coroutine_id,static::SHARE,$wait_time);
     }
 
 }

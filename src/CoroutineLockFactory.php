@@ -64,8 +64,8 @@ class CoroutineLockFactory
 
     public static function release( )
     {
-        foreach ($self::$lock_arr as $key => $value) {
-              self::unlock($key);
+        foreach (self::$lock_arr as $key => $value) {
+               self::unlock($key);
         }
 
     }
