@@ -1,0 +1,25 @@
+{
+  "name": "chenjiahao/swoft-coroutine-lock",
+  "type": "library",
+  "keywords": [
+    "php",
+    "swoole",
+    "swoft",
+    "coroutine",
+    "lock"
+  ],
+  "description": "swoft-coroutine-lock 协程锁",
+  "license": "Apache-2.0",
+  "require": {
+    "swoft/framework": "~2.0.0"
+  },
+  "autoload": {
+    "classmap": [
+    ],
+    "psr-4": {
+      "cjhswoftCoroutineLock\\": "src/"
+    },
+    "files": [
+    ]
+  }
+}
